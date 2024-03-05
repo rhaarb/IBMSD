@@ -204,17 +204,6 @@ kurtosis(data$sbp)
 # remove objects not needed in the following
 rm(or.n.d,tr.plot,tr.plot1,tp1)
 
-## scale data, because scales differ by a lot (feedback from estimation function later on)
-# scaling
-# if (dataset.name=="iflsmerg_" | dataset.name=="lasiw1_"){
-# data <- dplyr::mutate(data, across(-c(province, municipality, subdistrict, ruralurban, sex, smoker,
-#                                       int.id, edu, sbp, hypertension.diag, hh.id), scale))
-# }
-
-# if (dataset.name=="nids_"){
-#   data <- dplyr::mutate(data, across(-c(province, ruralurban, sex, smoker, int.id, edu, sbp,
-# hypertension.diag, hh.id), scale))
-# }
 # grouping (needed later)
 data <- dplyr::group_by(data, int.id)
 

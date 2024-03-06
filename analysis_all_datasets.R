@@ -346,8 +346,6 @@ lrt <- unlist(pbmclapply(1:100, LRT_Bootstrap, fit0 = fit0, fit1 = fit1,
                          data = data, mc.cores = detectCores() - 2))
 
 # approximate LRT distribution by Greven et al.
-# Sometimes we get NaNs (minus infinity), then we don't get further results. 
-# Let's ignore them for now by running:
 lrt <- as.numeric(lrt)
 lrt <- na.omit(lrt)
 
